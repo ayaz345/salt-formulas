@@ -26,10 +26,7 @@ class Migration:
         if set(self.data.keys()) & v05_keys != v05_keys:
             return 0.5
         # schema 1 has exporter names as keys
-        if set(self.data.keys()) & v1_keys:
-            return 1
-        else:
-            return 0
+        return 1 if set(self.data.keys()) & v1_keys else 0
 
     # set default values for proxy configuration
     def migrate_from_version_05(self):

@@ -23,8 +23,8 @@ def test_kernel_param_added(param, value, param_string):
                 }
                 replace_mock.assert_called_once_with(
                     name='/etc/default/grub',
-                    repl='GRUB_CMDLINE_LINUX_DEFAULT="{} {}"'.format(existing_params, param_string),
-                    pattern='GRUB_CMDLINE_LINUX_DEFAULT="[^"]*"'
+                    repl=f'GRUB_CMDLINE_LINUX_DEFAULT="{existing_params} {param_string}"',
+                    pattern='GRUB_CMDLINE_LINUX_DEFAULT="[^"]*"',
                 )
 
 
